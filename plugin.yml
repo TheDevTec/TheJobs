@@ -1,0 +1,10 @@
+name: TheJobs
+main: me.Straiker123.Jobs.Loader
+version: 1.0
+author: Straiker123
+depend: [TheAPI]
+api-version: 1.13
+commands:
+  Jobs:
+    usage: /<command>
+    description: Main command
