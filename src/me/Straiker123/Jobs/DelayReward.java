@@ -25,12 +25,6 @@ public class DelayReward {
 			s.add(item);
 			Loader.bp.put(p,s);
 		}break;
-		case BreedEntity:{
-			List<String> s = Loader.be.get(p);
-			if(s==null)s=new ArrayList<String>();
-			s.add(item);
-			Loader.be.put(p,s);
-		}break;
 		case CatchFish:{
 			List<String> s = Loader.cf.get(p);
 			if(s==null)s=new ArrayList<String>();
@@ -70,21 +64,6 @@ public class DelayReward {
 						}
 						}
 					Loader.bb.remove(p);
-				}
-				
-				if(Loader.be.isEmpty()==false)
-				for(Player p : Loader.be.keySet()) {
-					Jobs a = new Jobs(p.getName());
-					for(String s : Loader.be.get(p)) {
-						for(String d  :a.getJobs()) {
-							new Job(d).setPoints(p.getName(),
-									new Job(d).getPoints(p.getName())+
-								Loader.c.getConfig().getDouble("Jobs."+s+".Items.BreedEntity."+s+".Points"));
-						p.setTotalExperience(p.getTotalExperience()+Loader.c.getConfig().getInt("Jobs."+s+".Items.BreedEntity."+s+".Exp"));
-						TheAPI.getEconomyAPI().depositPlayer(p.getName(), Loader.c.getConfig().getDouble("Jobs."+s+".Items.BreedEntity."+s+".Money"));
-						}
-						}
-					Loader.be.remove(p);
 				}
 				
 				if(Loader.bp.isEmpty()==false)

@@ -62,7 +62,6 @@ public class Job {
 		BlockBreak,
 		BlockPlace,
 		KillEntity,
-		BreedEntity,
 		CraftItem,
 		CatchFish
 	}

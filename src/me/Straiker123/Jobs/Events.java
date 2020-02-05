@@ -91,24 +91,6 @@ public class Events implements Listener {
 			 }
 		 }
 	 @EventHandler
-	 public void onBreed(me.Straiker123.Events.EntityBreedEvent e) {
-		 if(e.getBreeder()!=null) {
-			 Player f = e.getBreeder();
-			 String s = f.getName();
-			 if(Loader.schedule)
-			 DelayReward.addItem(e.getBreeder(), me.Straiker123.Jobs.Job.JobAction.BreedEntity, e.getEntity().getName());
-			 else {
-				 for(String d  :new Jobs(s).getJobs()) {
-						new Job(d).setPoints(s,
-							new Job(d).getPoints(s)+
-							Loader.c.getConfig().getDouble("Jobs."+s+".Items.EntityBreed."+s+".Points"));
-					f.setTotalExperience(f.getTotalExperience()+Loader.c.getConfig().getInt("Jobs."+s+".Items.EntityBreed."+s+".Exp"));
-					TheAPI.getEconomyAPI().depositPlayer(s, Loader.c.getConfig().getDouble("Jobs."+s+".Items.EntityBreed."+s+".Money"));
-					}
-			 }
-		 }
-	 }
-	 @EventHandler
 	 public void onCatch(PlayerFishEvent e) {
 		 if(e.getCaught() != null && e.getCaught() instanceof Item) {
 		 String name = ((Item)e.getCaught()).getItemStack().getType().name();

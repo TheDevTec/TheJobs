@@ -20,7 +20,6 @@ public class Loader extends JavaPlugin {
 	public static HashMap<Player,List<String>> bb = new HashMap<Player,List<String>>();
 	public static HashMap<Player,List<String>> bp = new HashMap<Player,List<String>>();
 	public static HashMap<Player,List<String>> ke = new HashMap<Player,List<String>>();
-	public static HashMap<Player,List<String>> be = new HashMap<Player,List<String>>();
 	public static HashMap<Player,List<String>> ci = new HashMap<Player,List<String>>();
 	public static HashMap<Player,List<String>> cf = new HashMap<Player,List<String>>();
 	public static Pagination<ItemStack> craft;
@@ -35,7 +34,7 @@ public class Loader extends JavaPlugin {
 		TheAPI.getConsole().sendMessage(TheAPI.colorize("&0[&2TheJobs v"+getDescription().getVersion()+"&0] &e"+s));
 	}
 	public void onEnable() {
-		long t =System.currentTimeMillis()/1000;
+		long t =System.currentTimeMillis()/100;
 		msg("Loading configs..");
 		a.addDefault("Options.Schedule.Use", true);
 		a.addDefault("Options.Schedule.Delay", 20);
@@ -52,7 +51,7 @@ public class Loader extends JavaPlugin {
 		msg("Registering commands and events..");
 		Bukkit.getPluginManager().registerEvents(new Events(), this);
 		Bukkit.getPluginCommand("jobs").setExecutor(new JobsCMD(this));
-		msg("Loaded in "+(System.currentTimeMillis()/1000-t)+"ms");
+		msg("Loaded in "+(System.currentTimeMillis()/100-t)+"ms");
 	}
 	public static void updateJobs() {
 		if(jobs!=null)
