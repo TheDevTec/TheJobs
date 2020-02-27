@@ -35,7 +35,6 @@ public class sar {
 		
 	public static enum AllEvents{
 		EntityKill,
-		EntityBreed,
 		BlockPlace,
 		BlockBreak,
 		CatchFish,
@@ -207,8 +206,6 @@ public class sar {
 				a.addItem(createItem("&6"+(m.getItemMeta().hasDisplayName() ? m.getItemMeta().getDisplayName() : m.getType().name()),m.getType(), Arrays.asList("&7- Left click to &aadd item"
 						,"&7- Middle click to &6edit rewards","&7- Shift + Right click to &cremove item", "&7","&7- Item "+(ss ? "is &aadded" : "&cisn't added"))),setting);
 		}
-			break;
-		case EntityBreed:
 			break;
 		case EntityKill:
 			for(ItemStack m : Loader.mob.getPage(i)) {
